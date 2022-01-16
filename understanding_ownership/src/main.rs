@@ -22,7 +22,7 @@ fn main() {
 
 fn move_concept() {
     let s1 = String::from("Hello");
-    let s2 = s1;
+    let _s2 = s1;
     // In this case s2 points to the same memory the heap like s1
     // To prevent double free error, after the line let s2 = s1, Rust considers s1 as no longer
     // valid. Therefore, Rust doesn’t need to free anything when s1 goes out of scope
