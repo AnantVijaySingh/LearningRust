@@ -34,6 +34,15 @@ fn main() {
     // then user1 would still be valid after creating user2. The types of active and sign_in_count
     // are types that implement the Copy trait so are not bound by the rules of ownership.
 
+    // tuple structs
+    let _color1 = Color(255, 255, 0);
+    let _point1 = Point(1,0,1);
+
+    // unit-like structs
+    let _subject1 = AlwaysEqual;
+
+
+    // print statements
     println!("{}", user1.email);
     println!("{}", user2.email);
     println!("{}", user3.email);
@@ -70,3 +79,13 @@ fn build_user_shorthand_syntax (email: String, username: String) -> User {
         sign_in_count: 1,
     }
 }
+
+// tuple structs
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+
+// unit-like structs: structs that don’t have any fields
+struct AlwaysEqual;
+
+
