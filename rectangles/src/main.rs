@@ -23,12 +23,26 @@ fn main() {
         height: 50,
     };
 
+    // dbg and structs
+    let scale = 2;
+
+    let rectangle3 = Rectangle {
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    // The dbg! macro takes ownership of an expression, prints the file and line number of where
+    // that dbg! macro call occurs in your code along with the resulting value of that expression,
+    // and returns ownership of the value.
+
+    dbg!(&rectangle3);
+
     println!(
         "The area of the rectangle is {} square pixels",
         area_struct(&rectangle2)
     );
 
-
+    println!("Rectangle2 is {:#?}", rectangle2);
 }
 
 // Simple way
@@ -42,6 +56,7 @@ fn area_tuples(dimensions: (u32, u32)) -> u32 {
 }
 
 // Refactoring with structs
+#[derive(Debug)] // outer attribute trait
 struct Rectangle {
     width: u32,
     height: u32,
